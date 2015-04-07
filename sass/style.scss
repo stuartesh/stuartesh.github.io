@@ -1,0 +1,16 @@
+/*----------
+Portfolio styles
+----------*/
+
+
+//Partials
+@import "partials/_mixins.scss";
+@import "partials/_variables.scss";
+@import "partials/_base.scss";
+@import "partials/_layout.scss";
+@import "partials/_forms.scss";
+@import "partials/_buttons.scss";
+
+//Modules
+@import "partials/modules/_header.scss";
+@import "partials/modules/_footer.scss";

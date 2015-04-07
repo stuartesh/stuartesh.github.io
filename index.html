@@ -1,69 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 	<head>
-	  <meta charset="UTF-8">   
-	  <link rel="stylesheet" href="css/normalize.css">
-	  <link rel="stylesheet" href="css/style.css">
-
-	  <script type="text/javascript" src="js/script.js"></script>
-	  <title>Home-Portafolio</title>
+		<meta charset="UTF-8">
+		<title>Portafolio Stuart Sarmiento</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-	    <section class="header">
-            <nav>
-	       	    <div class="contacting">
-	       	       <h1 class="photo-loge"><a href="index.html">Stuart Sarmiento</a></h1>
-                    <ul class="nav-global">
-		        	  <li></li>
-		              <li><a href="index.html">Inicio</a></li>
-		              <li><a href="about">Sobre mi</a></li>
-		              <li><a href="portafolio.html">Proyectos</a></li>
-                    </ul>
-	            </div>
-	        </nav>
-	    </section>
+		<main>
+			<header class="main-header">
+				<h1 class="hide">Portafolio Stuart Sarmiento</h1>
+			</header> <!-- /.main-header-->
+			<section id="intro" class="banner">
+					<h2 class="banner-text title">
+            Stuart Sarmiento <br/> 
+            {Front End Developer} 
+					</h2>
+          <video class="banner-background" autoplay="autoplay" loop>
+            <source src="movie/banner.mp4" type="video/mp4">
+          </video>
+			</section> <!-- /#intro -->
+			<section id="skills" class="skills content">
+				<h2 class="title">Habilidades</h2>
+				<div class="icons">
+					<img class="icon" src="img/html5.png" alt="html5">
+          <img class="icon" src="img/css3.png" alt="css3">
+          <img class="icon" src="img/javascript.png" alt="javascript">
+				</div>
+				<div class="description">
+					<div class="skill-description">
+            <h4 class="title">HTML5</h4>
+            <p class="skill-info">Gran nivel de manipulacion, adaptacion e implementacion del reciente HTML5 y todas sus novedades.</p>     
+          </div>
+          <div class="skill-description">
+            <h4 class="title">CSS3</h4>
+            <p class="skill-info">Alta facilidad de implementacion y comprencion de css y sus implementaciones nuevas.</p>     
+          </div>
+          <div class="skill-description">
+            <h4 class="title">JAVASCRIPT</h4>
+            <p class="skill-info">Una agilidad de este lenguaje por su estilo y diferencia de programacion me es mas atractivo que los anteriores</p>     
+          </div>
+				</div>
+			</section> <!-- /#skills -->
 
-	    <section class="about">
-	    	<div class="contacting">
-		        <h3 class="title">Sobre mi</h3>
-		        <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	        </div>
-	    </section>
+			<section id="about-me" class="about-me">
+				<div class="content">
+					<h2 class="title">Un poco sobre mi</h2>
+          <p class="about-me-info">
+              Suelo ser optimista con las cosas que hago, soy apacionado por la tecnologia y siempre quiero aprender mas, 
+              saber como es, como funciona y poque funciona de esa manera, que lo hace especial etc.. 
+              Me agrada estar en compañia y escuchar a los de mas en todo tipo de casos pues para mi los encuentros son lecciones.
+          </p>
+				</div>
+			</section> <!-- #about-me .about-me END -->
 
-	    <section class="resent-works">
-            <div class="contacting">
-                <h1>Trabajos recientes</h1>
-	       	<!-- 
-				Esta seccion sera generada por un JSON
-				Por javascript
-	       	-->
-            </div>
-	    </section>
-
-	    <section class="contact">
-	       	<div class="contacting">
-		        <h3 class="title">Contact</h3>
-		        <form>
-		        <label for="name">Nombre</label>
-					<input type="text" name="name" placeholder="Nombre"/>
-				<label for="email">Correo</label>
-			        <input type="email" name="email" placeholder="E-mail"/>
-			    <label for="message">Opiniones</label>
-			        <textarea name="message" rows="5" cols="30" placeholder="Message"></textarea>
-			        <input type="submit" name="submit" value="Send">
-		        </form>
-		    </div>    
-	    </section>
-
-	     <footer>
-	     <div class="contact">
-	         <h5 class="copyr">&copy; Todos los Derechos Reservados Stuart Sarmiento CETAV 2015</h5>
-	    </div>     
-	   </footer>
+			<section id="lprojects" class="projects">
+				<h2 class="title">Mis proyectos recientes</h2>
+				<div id="content latest-projects"></div>
+			</section>
+			<section id="contact" class="contact content">
+				<h2 class="title">Contácto</h2>
+				<form action="" class="contact-form">
+					<label for="name">Nombre</label>
+					<input class="contact-input" type="text" id="name" name="name" value="" placeholder="Nombre y apellido" />
+					<label for="email">Correo electrónico</label>
+					<input class="contact-input" type="email"  name="email" value="" placeholder="user@example.com" />
+					<label for="phone">Teléfono</label>
+					<input class="contact-input" type="tel" id="phone" name="phone" value="" placeholder="6094-2545" />
+					<label for="message">Mensaje</label>
+					<textarea name="contact-message" id="message" cols="30" rows="10" class="contact-message" placeholder="Dejame Acá tu mensaje..."></textarea>
+					<input type="button" class="submit-button" value="Contactar" onclick="checkform()" />
+				</form>
+			</section>
+      <section id="social-networks" class="social-networks content">
+        <h2 class="title">Redes sociales</h2>
+        <div class="center-items">
+          <div class="facebook-icon"></div>
+          <div class="github-icon"></div>
+          <div class="twitter-icon"></div>
+        </div>
+      </section>
+			<footer class="main-footer">
+				<div class="content">
+					<h5 class="title">&copy; Stuart Sarmiento 2015 CETAV</h5>
+				</div>
+			</footer>
+		</main>
 	</body>
 </html>

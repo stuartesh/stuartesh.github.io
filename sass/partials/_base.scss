@@ -1,0 +1,40 @@
+//Escential rules for layout fits properly
+html {
+	@include box-sizing(border-box);
+	font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+	@include box-sizing(inherit);
+}
+
+body {
+	margin: 0;
+	font-family: $font-family;
+  background-color: rgb(210, 210, 210);
+}
+
+//Remove default decoration styles undesired
+a,
+a:hover {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+//Headings size and their margins
+h2 {
+	@include font-size(36);
+	margin: 0 auto 30px;
+}
+
+h5 {
+	@include font-size(14);
+	margin: 0 auto 30px;
+}
+
+

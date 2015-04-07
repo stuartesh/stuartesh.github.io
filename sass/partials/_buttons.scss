@@ -1,0 +1,13 @@
+.submit-button {
+  @include border-radius(10px);
+  font-weight: 700;
+	background: $secundary;
+	border: 2px solid $secundary;
+	color: $primary;
+	max-width: $column-width;
+  cursor: pointer;
+	&:hover {
+		background: $primary;
+		color: $secundary;
+	}
+}

@@ -1,0 +1,32 @@
+/* Mixin for font-size property
+include rem and pixel fallback
+"$size" represents font-size value in pixels, don't add "px" */
+@mixin font-size($size) {
+	font-size: $size+px;
+	font-size: ($size/10)+rem;
+}
+
+/* Mixin for box-sizing property
+include vendor support
+"$box-style" represents value of this property (border-box) */
+@mixin box-sizing($box-style) {
+	-webkit-box-sizing: $box-style;
+	-moz-box-sizing: $box-style;
+	box-sizing: $box-style;
+}
+
+/* Mixin for border-radius property
+include vendor support
+"$border-value" represents value for ALL borders (4 corners) in px, percentages, etc */
+@mixin border-radius($border-value) {
+	-webkit-border-radius: ($border-value);
+	-moz-border-radius: ($border-value);
+	border-radius: ($border-value);
+}
+
+
+/*Mixin for calculate width based od grid system
+"$column-widths" represents quantity of columns of grid system*/
+@mixin width-grid-based($column-widths) {
+	width: (($column-widths*$column-width)/$grid-width)*100%;
+}

@@ -1,0 +1,212 @@
+/*----------
+Portfolio styles
+----------*/
+/* Mixin for font-size property
+include rem and pixel fallback
+"$size" represents font-size value in pixels, don't add "px" */
+/* Mixin for box-sizing property
+include vendor support
+"$box-style" represents value of this property (border-box) */
+/* Mixin for border-radius property
+include vendor support
+"$border-value" represents value for ALL borders (4 corners) in px, percentages, etc */
+/*Mixin for calculate width based od grid system
+"$column-widths" represents quantity of columns of grid system*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: #d2d2d2; }
+
+a,
+a:hover {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+h2 {
+  font-size: 36px;
+  font-size: 3.6rem;
+  margin: 0 auto 30px; }
+
+h5 {
+  font-size: 14px;
+  font-size: 1.4rem;
+  margin: 0 auto 30px; }
+
+.content {
+  margin: 0 auto;
+  max-width: 980px; }
+
+.hide {
+  display: none; }
+
+.about-me,
+.banner,
+.contact,
+.projects,
+.skills,
+.social-networks {
+  margin-bottom: 50px; }
+
+.center-items {
+  width: 71.42857%;
+  overflow: hidden;
+  margin: 0 auto; }
+
+.skills .center-items > :first-child,
+.social-networks .center-items > :first-child {
+  margin-left: 0;
+  padding-right: 72px; }
+.skills .center-items > :last-child,
+.social-networks .center-items > :last-child {
+  margin-right: 0;
+  padding-left: 72px; }
+
+.banner {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  overflow: hidden; }
+  .banner .banner-text {
+    color: #FFF;
+    position: relative;
+    background-color: #000;
+    opacity: 0.7;
+    margin-top: 25%;
+    z-index: 1; }
+  .banner .banner-background {
+    z-index: 0;
+    width: 100%;
+    position: absolute;
+    top: 0px; }
+
+.skills .icons,
+.skills .description {
+  overflow: hidden; }
+.skills .icon {
+  height: 300px;
+  overflow: hidden;
+  float: left;
+  padding: 2%;
+  margin-left: 5%; }
+.skills .skill-description {
+  width: 27%;
+  border-radius: 5%;
+  height: 300px;
+  display: inline-block;
+  padding: 2%;
+  background-color: #43b8c9;
+  color: #FFF;
+  margin: 15px 0px 30px 48px;
+  overflow: hidden;
+  line-height: 28px;
+  font-size: 1.8rem;
+  float: left; }
+  .skills .skill-description:hover {
+    background-color: #FFF;
+    border: 2px solid #43b8c9;
+    color: #43b8c9; }
+
+.about-me {
+  background: url("../img/aboutBG.png") no-repeat top center #000;
+  height: 715px; }
+  .about-me .title {
+    color: #FFF;
+    padding-top: 50px; }
+
+.about-me-info {
+  line-height: 40px;
+  margin-top: 5%;
+  padding: 70px;
+  background-color: rgba(10, 10, 10, 0.5);
+  color: #43b8c9;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 40px; }
+  .about-me-info:after {
+    content: close-quote; }
+  .about-me-info:before {
+    content: open-quote; }
+
+.title {
+  font-weight: 100;
+  text-align: center; }
+
+.contact {
+  width: 42.85714%; }
+
+label {
+  color: #5A5A5A;
+  display: inline-block;
+  font-size: 16px;
+  font-size: 1.6rem;
+  margin-bottom: 2px; }
+
+input, textarea {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: "Open Sans", Arial, sans-serif;
+  background: #F0F0F0;
+  border: none;
+  color: #5A5A5A;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px; }
+
+textarea {
+  height: 158px;
+  resize: none; }
+
+::-webkit-input-placeholder {
+  color: #B4B4B4; }
+
+:-moz-placeholder {
+  color: #B4B4B4;
+  opacity: 1; }
+
+::-moz-placeholder {
+  color: #B4B4B4;
+  opacity: 1; }
+
+:-ms-input-placeholder {
+  color: #B4B4B4; }
+
+.submit-button {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  background: #43b8c9;
+  border: 2px solid #43b8c9;
+  color: #FFF;
+  max-width: 140px;
+  cursor: pointer; }
+  .submit-button:hover {
+    background: #FFF;
+    color: #43b8c9; }
+
+.main-footer {
+  background: #5A5A5A;
+  padding: 20px 0 10px; }
+  .main-footer .title {
+    margin: 0;
+    color: #FFF; }
+
+/*# sourceMappingURL=style.css.map */

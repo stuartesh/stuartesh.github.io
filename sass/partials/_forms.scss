@@ -1,0 +1,39 @@
+label {
+	color: $form-primary;
+	display: inline-block;
+	@include font-size(16);
+	margin-bottom: 2px;
+}
+
+input {
+	@include font-size(16);
+	font-family: $font-family;
+	background: $form-secundary;
+	border: none;
+	color: $form-primary;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+textarea {
+	@extend input;
+	height: 158px;
+	resize: none;
+}
+
+::-webkit-input-placeholder {
+	color: #B4B4B4;
+}
+:-moz-placeholder {
+	color: #B4B4B4;
+	opacity: 1;
+}
+::-moz-placeholder {
+	color: #B4B4B4;
+	opacity: 1;
+}
+:-ms-input-placeholder {
+	color: #B4B4B4;
+}
