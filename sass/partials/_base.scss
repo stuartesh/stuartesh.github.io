@@ -13,7 +13,7 @@ html {
 body {
 	margin: 0;
 	font-family: $font-family;
-  background-color: rgb(210, 210, 210);
+  background: transparent radial-gradient(#000, #4D4D4D) repeat scroll 0% 0%;
 }
 
 //Remove default decoration styles undesired
