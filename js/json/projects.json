@@ -1,25 +1,25 @@
 { "projects":[
     {
       "id" : 0,
-      "img" : "img/minima.jpg",
+      "img" : "img/minima.JPG",
       "content" : "En esta pagina se muestra un diseño confortante y minimalista pero con contenido suficiente para las espectativas de usuario",
       "title" : "Minimal"
     },
     {
       "id" : 1,
-      "img" : "img/game.jpg",
+      "img" : "img/game.JPG",
       "content" : "Video juego desarrollado en el GameJam oficial 2015 CETAV inspirado en el apoyo a disminuir el cambio climatico",
       "title" : "Sorry You Got Humans!"
     },
     {
       "id" : 2,
-      "img" : "img/iluminada.jpg",
+      "img" : "img/iluminada.JPG",
       "content" : "Pagina web desarrollada para La Iluminada dedicada a brindar servicios de iluminacion de interiores y remodelaciones",
       "title" : "Iluminada"
     },
     {
       "id" : 3,
-      "img" : "img/warframe.jpg",
+      "img" : "img/warframe.JPG",
       "content" : "Pagina Responsive de la comunidad fan del videojuego 'Warframe' enfocada en los personajes disponibles en el y sus habilidades",
       "title" : "Proyecto Wareframe"
     }
