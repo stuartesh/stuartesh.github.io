@@ -20,10 +20,10 @@ $("document").ready(function () {
     var content = "";
     for (var i = 0; i < info.length; i++) {
       content += (
-        "<div class=''>" +
-        "<img class='image-responsive' src='" + info[i].img + "' alt='" + info[i].title + "'/>" +
+        "<div class='project'>" +
+        "<a href='#'><img class='image-responsive' src='" + info[i].img + "' alt='" + info[i].title + "'/></a>" +
         "<h3 class='title'>" + info[i].title + "</h3>" +
-        "<p class='info'>" + info[i].content + "</p>" +
+        "<p class='project-info'>" + info[i].content + "</p>" +
         "</div>"
       );
     };

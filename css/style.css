@@ -26,7 +26,7 @@ html {
 body {
   margin: 0;
   font-family: "Open Sans", Arial, sans-serif;
-  background: transparent radial-gradient(#000, #4D4D4D) repeat scroll 0% 0%;
+  background-color: #A7C5C5;
 }
 
 *,
@@ -64,6 +64,7 @@ h5 {
 }
 
 .hide {
+  text-indent: -100%;
   display: none;
 }
 
@@ -181,10 +182,44 @@ h5 {
   content: open-quote;
 }
 
+.latest-projects {
+  overflow: hidden;
+}
+
+.image-responsive {
+  width: 100%;
+  height: 235px;
+}
+
+.project {
+  float: left;
+  width: 30%;
+  margin-left: 13.5%;
+  margin-top: 4%;
+  background-color: #43b8c9;
+  border: 1px solid #43b8c9;
+  border-radius: 30px;
+  color: #FFF;
+}
+.project:hover {
+  background-color: #FFF;
+  color: #43b8c9;
+}
+
+.project-info {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.project .title {
+  font-size: 22px;
+}
+
 .title {
   font-weight: 100;
   text-align: center;
-  color: #FFF;
+  color: #5A5A5A;
 }
 
 .contact {

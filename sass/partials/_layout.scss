@@ -6,7 +6,8 @@
 
 // Hide
 .hide {
-	display: none;
+  text-indent: -100%;
+  display: none;
 }
 
 // Basic layout rules
@@ -131,14 +132,52 @@
 	}
 }
 
+// Projects section
+.latest-projects {
+  overflow: hidden;
+}
+
+.image-responsive {
+  width: 100%;
+  height: 235px;
+}
+
+.project {
+  float: left;
+  width: 30%;
+  margin-left: 13.5%;
+  margin-top: 4%;
+  background-color: $secundary;
+  border: 1px solid $secundary;
+  border-radius: 30px;
+  color: $primary;
+  &:hover {
+    background-color: $primary;
+    color: $secundary;
+  }
+}
+
+.project-info {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.project .title {
+  font-size: 22px;
+}
+
+
 // Titles rules
 .title {
 	font-weight: 100;
 	text-align: center;
-	color: $primary;
+	color: $form-primary;
 }
 
 // Contact rules
 .contact {
 	width: ((3*$column-width)/$grid-width)*100%;
 }
+
+

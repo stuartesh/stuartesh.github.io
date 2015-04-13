@@ -54,19 +54,19 @@
 
 			<section id="projects" class="projects">
 				<h2 class="title">Mis proyectos recientes</h2>
-				<div class="content" id="latest-projects"></div>
+        <div class="latest-projects content" id="latest-projects"></div>
 			</section>
 			
 			<section id="contact" class="contact content">
 				<h2 class="title">Contácto</h2>
 				<form action="" class="contact-form">
-					<label for="name">Nombre</label>
+					<label class="hide" for="name">Nombre</label>
 					<input required minlength="5" maxlength="8"  class="contact-input" type="text" id="name" name="name" value="" placeholder="Nombre y apellido" />
-					<label for="email">Correo electrónico</label>
+					<label class="hide" for="email">Correo electrónico</label>
           <input autocomplete="email" required class="contact-input" type="email" id="email" name="email" value="" placeholder="user@example.com" />
-					<label for="phone">Teléfono</label>
+					<label class="hide" for="phone">Teléfono</label>
 					<input minlength="6" maxlength="20" required class="contact-input" type="tel" id="phone" name="phone" value="" placeholder="6094-2545" />
-					<label for="message">Mensaje</label>
+					<label class="hide" for="message">Mensaje</label>
 					<textarea required name="contact-message" id="message" cols="30" rows="10" class="contact-message" placeholder="Dejame Acá tu mensaje..."></textarea>
 					<input type="submit" class="submit-button" value="Contactar" onclick="checkform()" />
 				</form>
