@@ -1,0 +1,27 @@
+{ "projects":[
+    {
+      "id" : 0,
+      "img" : "img/loquesea.jpg",
+      "content" : "Proyecto iluminada",
+      "title" : "Proyecto iluminada"
+    },
+    {
+      "id" : 1,
+      "img" : "img/loquesea.jpg",
+      "content" : "Proyecto gamejam",
+      "title" : "sorry you got humans the game!"
+    },
+    {
+      "id" : 2,
+      "img" : "img/loquesea.jpg",
+      "content" : "Proyecto minima",
+      "title" : "Proyecto minimal"
+    },
+    {
+      "id" : 3,
+      "img" : "img/loquesea.jpg",
+      "content" : "Proyecto wareframe",
+      "title" : "Proyecto wareframe"
+    }
+  ]
+}

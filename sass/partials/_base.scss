@@ -1,13 +1,6 @@
-//Escential rules for layout fits properly
 html {
 	@include box-sizing(border-box);
 	font-size: 62.5%;
-}
-
-*,
-*:before,
-*:after {
-	@include box-sizing(inherit);
 }
 
 body {
@@ -16,7 +9,13 @@ body {
   background: transparent radial-gradient(#000, #4D4D4D) repeat scroll 0% 0%;
 }
 
-//Remove default decoration styles undesired
+*,
+*:before,
+*:after {
+  @include box-sizing(inherit);
+}
+
+//Remove default decoration unnesesary
 a,
 a:hover {
 	text-decoration: none;
@@ -26,7 +25,7 @@ li {
 	list-style: none;
 }
 
-//Headings size and their margins
+//Headings size and margins
 h2 {
 	@include font-size(36);
 	margin: 0 auto 30px;

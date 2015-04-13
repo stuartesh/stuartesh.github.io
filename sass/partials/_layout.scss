@@ -1,10 +1,10 @@
-// Align content to center of window's width
+// Align content to center of  the window
 .content {
 	margin: 0 auto;
 	max-width: $grid-width;
 }
 
-// Dont show element
+// Hide
 .hide {
 	display: none;
 }
@@ -19,7 +19,7 @@
 	margin-bottom: 50px;
 }
 
-// Align elements to center (the element must have "display: block" statement)
+// Align elements to center
 .center-items {
 	@include width-grid-based(5);
 	overflow: hidden;
@@ -54,11 +54,10 @@
 	.banner-text {
 		color: $primary;
     position: relative;
-    background-color: #000;
-    opacity: 0.7;
+    @include transparency($transparent-background, 0.7);
     line-height: 1.8;
     margin: 310px;
-    border-radius: 20px;
+    @include border-radius(20px);
 	}
   .banner-background {
     z-index: 0;
@@ -69,7 +68,7 @@
 }
 
 
-// Skills section rules
+// Skills section 
 .skills{
   .icons,
   .description {
@@ -104,7 +103,7 @@
 }
 
 
-// About-me section rules
+// About-me section 
 .about-me {
 	background: url("../img/aboutBG.png") no-repeat top center #000;
   height: 715px;
@@ -132,13 +131,14 @@
 	}
 }
 
-// Titles rule
+// Titles rules
 .title {
 	font-weight: 100;
 	text-align: center;
+	color: $primary;
 }
 
-// Contact layout rule
+// Contact rules
 .contact {
 	width: ((3*$column-width)/$grid-width)*100%;
 }

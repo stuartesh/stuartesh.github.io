@@ -1,58 +1,71 @@
 /*----------
 Portfolio styles
 ----------*/
-/* Mixin for font-size property
-include rem and pixel fallback
-"$size" represents font-size value in pixels, don't add "px" */
-/* Mixin for box-sizing property
-include vendor support
-"$box-style" represents value of this property (border-box) */
-/* Mixin for border-radius property
-include vendor support
-"$border-value" represents value for ALL borders (4 corners) in px, percentages, etc */
-/*Mixin for calculate width based od grid system
-"$column-widths" represents quantity of columns of grid system*/
+/* 
+Mixin for border-radius 
+"$border" represents value for borders*/
+/* 
+Mixin for font-size 
+include both rem and pixels fallback
+"$size" variable represents font-size value in pixels, don't add "px" */
+/* Mixin for box-sizing 
+"$box-style" represents value of this property */
+/* Mixin for transparency
+Include fallback for older browsers
+"$color" represents the color to use (HEX, RGB, HSL...)
+"$opacity" represents opacity of color (0.0 - 1.0) */
+/*Mixin for calculate width based on the grid
+"$column-widths" represents quantity of columns of the grid */
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  background: transparent radial-gradient(#000, #4D4D4D) repeat scroll 0% 0%;
+}
 
 *,
 *:before,
 *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
-  box-sizing: inherit; }
-
-body {
-  margin: 0;
-  font-family: "Open Sans", Arial, sans-serif;
-  background: transparent radial-gradient(#000, #4D4D4D) repeat scroll 0% 0%; }
+  box-sizing: inherit;
+}
 
 a,
 a:hover {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 li {
-  list-style: none; }
+  list-style: none;
+}
 
 h2 {
   font-size: 36px;
   font-size: 3.6rem;
-  margin: 0 auto 30px; }
+  margin: 0 auto 30px;
+}
 
 h5 {
   font-size: 14px;
   font-size: 1.4rem;
-  margin: 0 auto 30px; }
+  margin: 0 auto 30px;
+}
 
 .content {
   margin: 0 auto;
-  max-width: 980px; }
+  max-width: 980px;
+}
 
 .hide {
-  display: none; }
+  display: none;
+}
 
 .about-me,
 .banner,
@@ -60,21 +73,25 @@ h5 {
 .projects,
 .skills,
 .social-networks {
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+}
 
 .center-items {
   width: 71.42857%;
   overflow: hidden;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .skills .center-items > :first-child,
 .social-networks .center-items > :first-child {
   margin-left: 0;
-  padding-right: 72px; }
+  padding-right: 72px;
+}
 .skills .center-items > :last-child,
 .social-networks .center-items > :last-child {
   margin-right: 0;
-  padding-left: 72px; }
+  padding-left: 72px;
+}
 
 .banner {
   width: 100%;
@@ -85,30 +102,37 @@ h5 {
   position: relative;
   overflow: hidden;
   height: 700px;
-  background: transparent url("../img/bannerBG.png") no-repeat scroll 0% 50%; }
-  .banner .banner-text {
-    color: #FFF;
-    position: relative;
-    background-color: #000;
-    opacity: 0.7;
-    line-height: 1.8;
-    margin: 310px;
-    border-radius: 20px; }
-  .banner .banner-background {
-    z-index: 0;
-    width: 100%;
-    position: absolute;
-    top: 0px; }
+  background: transparent url("../img/bannerBG.png") no-repeat scroll 0% 50%;
+}
+.banner .banner-text {
+  color: #FFF;
+  position: relative;
+  background-color: #000;
+  opacity: 0.7;
+  line-height: 1.8;
+  margin: 310px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.banner .banner-background {
+  z-index: 0;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+}
 
 .skills .icons,
 .skills .description {
-  overflow: hidden; }
+  overflow: hidden;
+}
 .skills .icon {
   height: 300px;
   overflow: hidden;
   float: left;
   padding: 2%;
-  margin-left: 5%; }
+  margin-left: 5%;
+}
 .skills .skill-description {
   width: 27%;
   border-radius: 5%;
@@ -121,18 +145,22 @@ h5 {
   overflow: hidden;
   line-height: 28px;
   font-size: 1.8rem;
-  float: left; }
-  .skills .skill-description:hover {
-    background-color: #FFF;
-    border: 2px solid #43b8c9;
-    color: #43b8c9; }
+  float: left;
+}
+.skills .skill-description:hover {
+  background-color: #FFF;
+  border: 2px solid #43b8c9;
+  color: #43b8c9;
+}
 
 .about-me {
   background: url("../img/aboutBG.png") no-repeat top center #000;
-  height: 715px; }
-  .about-me .title {
-    color: #FFF;
-    padding-top: 50px; }
+  height: 715px;
+}
+.about-me .title {
+  color: #FFF;
+  padding-top: 50px;
+}
 
 .about-me-info {
   line-height: 40px;
@@ -144,25 +172,32 @@ h5 {
   font-size: 1.8rem;
   font-style: italic;
   font-weight: 100;
-  line-height: 40px; }
-  .about-me-info:after {
-    content: close-quote; }
-  .about-me-info:before {
-    content: open-quote; }
+  line-height: 40px;
+}
+.about-me-info:after {
+  content: close-quote;
+}
+.about-me-info:before {
+  content: open-quote;
+}
 
 .title {
   font-weight: 100;
-  text-align: center; }
+  text-align: center;
+  color: #FFF;
+}
 
 .contact {
-  width: 42.85714%; }
+  width: 42.85714%;
+}
 
 label {
   color: #5A5A5A;
   display: inline-block;
   font-size: 16px;
   font-size: 1.6rem;
-  margin-bottom: 2px; }
+  margin-bottom: 2px;
+}
 
 input, textarea {
   font-size: 16px;
@@ -174,25 +209,31 @@ input, textarea {
   display: block;
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 textarea {
   height: 158px;
-  resize: none; }
+  resize: none;
+}
 
 ::-webkit-input-placeholder {
-  color: #B4B4B4; }
+  color: #B4B4B4;
+}
 
 :-moz-placeholder {
   color: #B4B4B4;
-  opacity: 1; }
+  opacity: 1;
+}
 
 ::-moz-placeholder {
   color: #B4B4B4;
-  opacity: 1; }
+  opacity: 1;
+}
 
 :-ms-input-placeholder {
-  color: #B4B4B4; }
+  color: #B4B4B4;
+}
 
 .submit-button {
   -webkit-border-radius: 10px;
@@ -203,16 +244,20 @@ textarea {
   border: 2px solid #43b8c9;
   color: #FFF;
   max-width: 140px;
-  cursor: pointer; }
-  .submit-button:hover {
-    background: #FFF;
-    color: #43b8c9; }
+  cursor: pointer;
+}
+.submit-button:hover {
+  background: #FFF;
+  color: #43b8c9;
+}
 
 .main-footer {
   background: #5A5A5A;
-  padding: 20px 0 10px; }
-  .main-footer .title {
-    margin: 0;
-    color: #FFF; }
+  padding: 20px 0 10px;
+}
+.main-footer .title {
+  margin: 0;
+  color: #FFF;
+}
 
 /*# sourceMappingURL=style.css.map */
