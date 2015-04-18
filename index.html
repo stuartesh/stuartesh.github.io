@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Portafolio Stuart Sarmiento</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="application/javascript" src="js/jQuery 2.1.3.js"></script>
     <script type="application/javascript" src="js/scripts.js"></script>
   </head>
   <body>
@@ -55,44 +54,7 @@
       <section id="projects" class="projects">
         <h2 class="title">Mis proyectos recientes</h2>
         <div class="latest-projects content" id="latest-projects">
-          <div class="project">
-            <a href="#minimal-modal">
-              <img class="image-responsive" src="img/minima.JPG" alt="Minimal">
-            </a>
-            <h3 class="title">Minimal</h3>
-            <p class="project-info">
-              En esta pagina se muestra un diseño confortante y minimalista pero con contenido suficiente para las espectativas de usuario
-            </p>
-          </div>
-          
-          <div class="project">
-            <a href="#game-modal">
-              <img class="image-responsive" src="img/game.JPG" alt="Sorry You Got Humans!">
-            </a>
-            <h3 class="title">Sorry You Got Humans!</h3>
-            <p class="project-info">
-              Video juego desarrollado en el GameJam oficial 2015 CETAV inspirado en el apoyo a disminuir el cambio climatico
-            </p>
-          </div>
-          
-          <div class="project">
-            <a href="#iluminada-modal"><img class="image-responsive" src="img/iluminada.JPG" alt="Iluminada">
-            </a>
-            <h3 class="title">Iluminada</h3>
-            <p class="project-info">
-              Pagina web desarrollada para La Iluminada dedicada a brindar servicios de iluminacion de interiores y remodelaciones
-            </p>
-          </div>
-          
-          <div class="project">
-            <a href="#wareframe-modal"><img class="image-responsive" src="img/warframe.JPG" alt="Wareframe">
-            </a>
-            <h3 class="title">Wareframe</h3>
-            <p class="project-info">
-              Pagina Responsive de la comunidad fan del videojuego 'Warframe' enfocada en los personajes disponibles en el y sus habilidades
-            </p>
-          </div>
-          
+        
           <div id="game-modal" class="modalDialog">
             <div>
               <a href="#close" title="Close" class="modal-close">X</a>
@@ -142,17 +104,28 @@
 
       <section id="contact" class="contact content">
         <h2 class="title">Contácto</h2>
-        <form action="" class="contact-form">
+        <form id="contactForm" action="" class="contact-form">
           <label class="hide" for="name">Nombre</label>
-          <input required minlength="5" maxlength="8"  class="contact-input" type="text" id="name" name="name" value="" placeholder="Nombre y apellido" />
+          <input  minlength="5" maxlength="40"  class="contact-input" type="text" id="name" name="name" value="" placeholder="Nombre y apellido" />
+          <p class="error"></p>
+
           <label class="hide" for="email">Correo electrónico</label>
-          <input autocomplete="email" required class="contact-input" type="email" id="email" name="email" value="" placeholder="user@example.com" />
+          <input autocomplete="email"  class="contact-input" type="email" id="email" name="email" value="" placeholder="user@example.com" />
+          <p class="error"></p>
+
           <label class="hide" for="phone">Teléfono</label>
-          <input minlength="6" maxlength="20" required class="contact-input" type="tel" id="phone" name="phone" value="" placeholder="6094-2545" />
+          <input minlength="6" maxlength="20"  class="contact-input" type="tel" id="phone" name="phone" value="" placeholder="6094-2545" />
+          <p class="error"></p>
+
           <label class="hide" for="message">Mensaje</label>
-          <textarea required name="contact-message" id="message" cols="30" rows="10" class="contact-message" placeholder="Dejame Acá tu mensaje..."></textarea>
-          <input type="submit" class="submit-button" value="Contactar" onclick="checkform()" />
+          <textarea  name="contact-message" id="message" cols="30" rows="10" class="contact-message" placeholder="Dejame Acá tu mensaje..."></textarea>
+          <p class="error"></p>
+          
+
+          <input type="button" class="submit-button" value="Contactar" onclick="go.validate.fields()" />
+
         </form>
+
       </section> <!-- /#contact -->
 
       <section id="social-networks" class="social-networks content">

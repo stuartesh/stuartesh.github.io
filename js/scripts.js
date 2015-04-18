@@ -1,65 +1,82 @@
-$("document").ready(function () {
-  $.ajax({
-    url: "js/json/projects.json",
-    beforeSend: function (xhr) {
-      if (xhr.overrideMimeType) {
-        xhr.overrideMimeType("application/json");
+var go = {};
+
+go.draw = function() {
+  var projects = "";
+
+  return {
+      projectsDetail : function(info) {
+      var data = JSON.parse(info.responseText);
+      var container = document.getElementById("latest-projects");
+
+      for (var i = 0; i < data.projects.length; i++) {
+        projects += (
+          "<div class='project'>" +
+          "<a href='#"+ data.projects[i].modal +"'><img class='image-responsive' src='" + data.projects[i].img + "' alt='" + data.projects[i].title + "'/></a>" +
+          "<h3 class='title'>" + data.projects[i].title + "</h3>" +
+          "<p class='project-info'>" + data.projects[i].content + "</p>" +
+          "</div>"
+        );
       }
-    },
-    dataType: 'json',
-    type : "GET",
-    success: function (data) {
-      drawPojectsContent(data.projects);
-    },
-    error: function (jqXHR, text, error) {
-      console.log("Text Status" + text + "\nError: " + error);
+      container.innerHTML = container.innerHTML + projects;
+      }
     }
-  });
+}();
 
-  function drawPojectsContent(info) {
-    var content = "";
-    for (var i = 0; i < info.length; i++) {
-      content += (
-        "<div class='project'>" +
-        "<a href='#'><img class='image-responsive' src='" + info[i].img + "' alt='" + info[i].title + "'/></a>" +
-        "<h3 class='title'>" + info[i].title + "</h3>" +
-        "<p class='project-info'>" + info[i].content + "</p>" +
-        "</div>"
-      );
-    };
-    console.log(content);
-    document.getElementById("latest-projects").innerHTML = content;
-  };
-})
+go.validate = function() {
+    
+  return {
+    fields : function() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var tel = Number(phone);
+      var message = document.getElementById("message").value;
+      var failureField = document.getElementsByClassName("error");
+      var simbols = (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/);
 
-function checkform() {
-  var error = 0;
-  var fallos = [];
-  var nombre = document.getElementById("name").value;
-  var tel = document.getElementById("phone").value;
-  var phone = Number(tel);
-  var mail = document.getElementById("email").value;
-  var message = document.getElementById("message").value;
+      if (name < 4 || name.search("[^A-Z a-z]") >= 0) {
+        failureField[0].innerHTML = "Ingresa tu nombre y apellido sin caracteres especiales.";
+        setTimeout( function() { failureField[0].innerHTML = ""; }, 3000);
 
-  if(nombre === "" || typeof nombre === "number" ) {
-    error = error+(1);
-    fallos.push("El campo de nombre no puede estar vacio ni contener números");
+      }else if(simbols.test(email) == false){
+        failureField[1].innerHTML = "El correo debe llevar el simbolo de '@' y '.com' al final.";
+        setTimeout( function() { failureField[1].innerHTML = ""; }, 3000);
+
+      }else if(tel.length < 8) {
+        failureField[2].innerHTML = "Solo se admiten Numeros en este campo y con un minimo de 8 dijitos";
+        setTimeout( function() { failureField[2].innerHTML = ""; }, 3000);
+        console.log(tel);
+
+      }else if(message.length < 10) {
+        failureField[3].innerHTML = "Manda un mensaje asi será mas facil contactarte";
+        setTimeout( function() { failureField[3].innerHTML = ""; }, 3000);
+
+      }else if (name == null || name.length == 0 || email == null || email.length == 0 || phone == null || phone.length == 0 || message == null || message.length == 0) {
+          window.alert("Es necesario que completes los espacios en blanco para continuar verifica que todo esta en su lugar n.n.");
+      }
+      else{
+        alert("Gracias! Su informacion a sido enviada le contactare lo mas pronto posible");
+        document.getElementById("contactForm").submit();
+      }
+    }
   }
-  if(typeof phone !== "number" || phone == "") {
-    error = error+(1);
-    fallos.push("El campo del telefono debe contener solamente numeros");
+}();
+  
+function ajaxRequest(){
+  var xmlhttp;
+
+  if (window.XMLHttpRequest) { // request for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
   }
-  if(typeof mail !== "string" || mail == "") {
-    error = error+(1);
-    fallos.push("El campo de correo debe contener el simbolo '@'");
+  else {// request for  IE5, IE6+
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   }
-  if(typeof message !== "string" || message.length < 10 ) {
-    error = error+(1);
-    fallos.push("Enviame un mensaje asi tendre mas detalle del contacto n.n");
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState === 4 &&  xmlhttp.status == 200) {  
+        go.draw.projectsDetail(xmlhttp);
+      }
+    }
+    xmlhttp.open("GET", "js/projects.json", true);
+    xmlhttp.send();
   }
-  if(error !== 0) {
-    window.alert(fallos.join("\n"));
-  } else  {
-    window.alert("Gracias por contactarme respondere lo antes posible n.n");
-  };
-}
+ajaxRequest();
